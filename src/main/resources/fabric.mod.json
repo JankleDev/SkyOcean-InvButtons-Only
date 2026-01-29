@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "skyocean",
   "version": "${version}",
-  "name": "SkyOcean",
+  "name": "SkyOcean-fps",
   "description": "SkyOcean is a hypixel skyblock mod that aims to provide a better playing experience by integrating QOL elements in an unnoticeable way.",
   "license": "Modified MIT",
   "icon": "assets/skyocean/skyocean-big.png",

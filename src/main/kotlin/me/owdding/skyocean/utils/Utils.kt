@@ -16,11 +16,11 @@ import me.owdding.ktmodules.AutoCollect
 import me.owdding.lib.displays.Display
 import me.owdding.lib.displays.Displays
 import me.owdding.lib.extensions.ListMerger
-import me.owdding.lib.repo.LevelableTreeNode
+
 import me.owdding.lib.utils.MeowddingLogger
 import me.owdding.repo.RemoteRepo
 import me.owdding.skyocean.SkyOcean
-import me.owdding.skyocean.accessors.SafeMutableComponentAccessor
+
 import me.owdding.skyocean.config.Config
 import me.owdding.skyocean.generated.SkyOceanCodecs
 import me.owdding.skyocean.utils.chat.ChatUtils
@@ -232,13 +232,7 @@ object Utils {
     operator fun <Key : Any, Value : Any> Cache<Key, Value>.get(key: Key) = this.getIfPresent(key)
     operator fun <Key : Any, Value : Any> Cache<Key, Value>.set(key: Key, value: Value) = this.put(key, value)
 
-    fun MutableComponent.appendSafe(other: Component): MutableComponent? = (this as? SafeMutableComponentAccessor)?.`skyocean$appendSafe`(other)
-    fun MutableComponent.mutableSiblings(): MutableList<Component>? = (this as? SafeMutableComponentAccessor)?.`skyocean$mutableSiblings`()
-    var MutableComponent.textContents: ComponentContents
-        get() = this.contents
-        set(value) {
-            (this as? SafeMutableComponentAccessor)?.`skyocean$setContents`(value)
-        }
+    
 
     inline fun <T> KMutableProperty0<T>.setIf(value: T, predicate: (T) -> Boolean) {
         if (predicate(value)) this.set(value)
@@ -386,8 +380,7 @@ object Utils {
     fun Iterable<Item>.filterNotAir() = this.filterNot { item -> item == Items.AIR }
     fun <T> Iterable<Holder<T>>.unwrap() = this.map { it.value() }
 
-    fun LevelableTreeNode.totalPowder() = powderForInterval(1 exclusiveInclusive maxLevel)
-    fun LevelableTreeNode.powderForInterval(intRange: IntRange) = intRange.sumOf { costForLevel(it).second }
+    
 
     fun nextUp(amount: Int, divider: Int) = if (amount % divider == 0) amount else amount - (amount % divider) + divider
 }

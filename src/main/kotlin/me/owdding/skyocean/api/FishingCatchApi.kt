@@ -1,23 +1,7 @@
 package me.owdding.skyocean.api
 
-import me.owdding.ktmodules.Module
-import me.owdding.skyocean.events.fishing.FishCatchEvent
-import net.minecraft.sounds.SoundEvents
-import net.minecraft.world.phys.Vec3
-import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
-import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
-import tech.thatgravyboat.skyblockapi.api.events.base.predicates.OnlyOnSkyBlock
-import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
-import tech.thatgravyboat.skyblockapi.api.events.minecraft.sounds.SoundPlayedEvent
-import tech.thatgravyboat.skyblockapi.api.events.time.TickEvent
-import tech.thatgravyboat.skyblockapi.helpers.McPlayer
-import tech.thatgravyboat.skyblockapi.utils.time.currentInstant
-import tech.thatgravyboat.skyblockapi.utils.time.since
-import kotlin.time.Duration.Companion.seconds
-import kotlin.time.Instant
 
-@Module
-object FishingCatchApi {
+object FishingCatchApi {/*
 
     val hook get() = McPlayer.self?.fishing
 
@@ -70,4 +54,4 @@ object FishingCatchApi {
         lastCatchSound = Instant.DISTANT_PAST
     }
 
-}
+*/}

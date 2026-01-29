@@ -5,25 +5,9 @@ import com.teamresourceful.resourcefulconfig.api.types.info.ResourcefulConfigLin
 import com.teamresourceful.resourcefulconfig.api.types.options.TranslatableValue
 import com.teamresourceful.resourcefulconfigkt.api.ConfigKt
 import me.owdding.skyocean.SkyOcean
-import me.owdding.skyocean.config.features.chat.ChatConfig
-import me.owdding.skyocean.config.features.combat.SlayerConfig
-import me.owdding.skyocean.config.features.dungeons.DungeonsConfig
-import me.owdding.skyocean.config.features.fishing.FishingConfig
-import me.owdding.skyocean.config.features.foraging.ForagingConfig
-import me.owdding.skyocean.config.features.foraging.GalateaConfig
-import me.owdding.skyocean.config.features.garden.GardenConfig
 import me.owdding.skyocean.config.features.inventory.Buttons
 import me.owdding.skyocean.config.features.inventory.InventoryConfig
-import me.owdding.skyocean.config.features.lorecleanup.LoreModifierConfig
-import me.owdding.skyocean.config.features.mining.MineshaftConfig
-import me.owdding.skyocean.config.features.mining.MiningConfig
-import me.owdding.skyocean.config.features.mining.MiningRetexture
-import me.owdding.skyocean.config.features.mining.ScathaConfig
-import me.owdding.skyocean.config.features.misc.CraftHelperConfig
-import me.owdding.skyocean.config.features.misc.MiscConfig
-import me.owdding.skyocean.config.features.misc.MobIconsConfig
-import me.owdding.skyocean.config.features.misc.`fun`.FunConfig
-import me.owdding.skyocean.config.hidden.OverlayPositions
+
 import me.owdding.skyocean.config.patcher.ConfigPatches
 import me.owdding.skyocean.utils.SkyOceanModifyIndicator
 import me.owdding.skyocean.utils.chat.ChatUtils
@@ -37,28 +21,11 @@ object Config : ConfigKt("skyocean/config") {
     override val links: Array<ResourcefulConfigLink> = emptyArray()
 
     init {
-        category(ChatConfig)
-        category(SlayerConfig)
-        category(FishingConfig)
-        category(ForagingConfig) {
-            category(GalateaConfig)
-        }
-        category(GardenConfig)
+        
         category(InventoryConfig)
-        category(LoreModifierConfig)
-        category(MiningConfig) {
-            category(MiningRetexture)
-            category(ScathaConfig)
-            category(MineshaftConfig)
-        }
-        category(DungeonsConfig)
-        category(MiscConfig) {
-            category(MobIconsConfig)
-            category(CraftHelperConfig)
-            category(FunConfig)
-        }
+        
         category(Buttons)
-        category(OverlayPositions)
+        
 
         separator("skyocean.config.main.modifications")
     }

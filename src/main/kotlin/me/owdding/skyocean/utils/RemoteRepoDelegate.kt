@@ -6,7 +6,6 @@ import me.owdding.lib.events.FinishRepoLoadingEvent
 import me.owdding.lib.utils.MeowddingLogger
 import me.owdding.skyocean.SkyOcean
 import me.owdding.skyocean.utils.Utils.loadRemoteRepoData
-import me.owdding.skyocean.utils.extensions.runCatching
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import java.util.concurrent.CopyOnWriteArraySet
 import java.util.concurrent.atomic.AtomicReference
@@ -21,9 +20,7 @@ class RemoteRepoDelegate<T : Any>(private val path: String, private val loader: 
     }
 
     override fun getValue(thisRef: Any?, property: KProperty<*>): T? = cachedValue.get()
-    private fun update() = runCatching("Loading $path from remote repo!") {
-        cachedValue.setRelease(loader(path))
-        debug("Loaded $path from remote repo!")
+    private fun update() = 
     }
 
     @Module
